@@ -87,18 +87,21 @@
 
     <section id="fonctionnement">
       <h2>Comment ça marche</h2>
+      <p>Un assistant en quatre étapes, dans le panneau « Barrage » qui apparaît sur instagram.com :</p>
       <ol class="steps">
-        <li><h3>Importez votre liste</h3><p>Dans le panneau « Barrage » qui apparaît sur instagram.com, collez des pseudos ou choisissez un fichier. Vous décochez les comptes que vous ne voulez pas bloquer.</p></li>
-        <li><h3>Ouvrez le prochain profil</h3><p>Un bouton vous emmène sur le premier compte de la liste qui n'est pas encore traité.</p></li>
-        <li><h3>Un clic, un blocage</h3><p>« Bloquer et passer au suivant » ouvre le menu ⋯, clique sur Bloquer puis sur Confirmer, et ouvre le profil suivant. Au moins 8 secondes entre deux blocages.</p></li>
+        <li><h3>Importez votre liste</h3><p>Collez des pseudos ou choisissez un fichier : le panneau annonce combien de comptes il a reconnus.</p></li>
+        <li><h3>Choisissez qui bloquer</h3><p>Décochez les comptes que vous voulez épargner. Une recherche et « Tout cocher » facilitent le tri.</p></li>
+        <li><h3>Vérifiez et confirmez</h3><p>Un résumé de ce qui va se passer, l'avertissement sur les conditions d'Instagram, et une case « J'ai compris ».</p></li>
+        <li><h3>Choisissez le mode</h3><p>Pas à pas (un clic par profil, recommandé) ou automatique. Les réglages du mode automatique se font ici, à la fin.</p></li>
       </ol>
       <ul class="points">
+        <li><strong>Pas à pas :</strong> « Bloquer et passer au suivant » ouvre le menu ⋯, clique sur Bloquer puis sur Confirmer, et ouvre le profil suivant. Au moins 8 secondes entre deux blocages.</li>
         <li>Les comptes déjà bloqués et les profils indisponibles sont reconnus et sautés.</li>
         <li>Si la confirmation propose plusieurs choix (par exemple « et d'autres comptes possibles »), l'extension s'arrête plutôt que de choisir à votre place.</li>
         <li>Si l'interface d'Instagram change et que l'extension ne s'y retrouve plus, elle s'arrête et vous dit à quelle étape.</li>
         <li>Votre progression est mémorisée : vous reprenez quand vous voulez.</li>
-        <!-- Mode automatique : disponible à partir de la version 0.2.0 de l'extension -->
-        <li><strong>Mode automatique, en option :</strong> l'extension enchaîne les profils seule, avec des délais aléatoires, un maximum par session (10 par défaut) et un arrêt à la première erreur ou au premier message de limite d'Instagram. Plus pratique, mais plus risqué : voir « À savoir ».</li>
+        <!-- Assistant et mode automatique : disponibles à partir de la version 0.3.0 de l'extension -->
+        <li><strong>Mode automatique, en option :</strong> l'extension enchaîne les profils seule. Trois préréglages (Prudent, Équilibré, Rapide) fixent le maximum de blocages par session et les délais aléatoires entre deux. Elle s'arrête à la première erreur ou au premier message de limite d'Instagram. Plus pratique, mais plus risqué : voir « À savoir ».</li>
       </ul>
 
       <h3 style="margin-top:22px">Format de la liste</h3>
@@ -117,16 +120,16 @@ pseudo3</pre>
       <h2>En images</h2>
       <div class="captures">
         <figure>
-          <img src="images/capture-pas-a-pas.png" width="637" height="943" loading="lazy" alt="Panneau Barrage en mode pas à pas : progression « 1 traités sur 6 comptes », profil ouvert, bouton « Bloquer et passer au suivant » et message « Compte exemple 1 bloqué ».">
-          <figcaption><strong>Pas à pas.</strong> Un clic bloque le profil ouvert et passe au suivant ; la progression est affichée.</figcaption>
+          <img src="images/capture-comptes.png" width="744" height="944" loading="lazy" alt="Étape 2 sur 4 de l'assistant Barrage, « Qui voulez-vous bloquer ? » : une liste de six comptes d'exemple avec cases à cocher, dont un décoché, le compteur « 5 sur 6 sélectionnés » et les boutons Retour et Continuer.">
+          <figcaption><strong>Étape 2.</strong> Vous décochez les comptes à épargner.</figcaption>
         </figure>
         <figure>
-          <img src="images/capture-automatique.png" width="637" height="844" loading="lazy" alt="Panneau Barrage en mode automatique : compte à rebours avant le prochain blocage, bouton « Arrêter le mode automatique » et deux comptes bloqués.">
-          <figcaption><strong>Mode automatique.</strong> Compte à rebours aléatoire entre deux blocages, bouton Arrêter toujours disponible.</figcaption>
+          <img src="images/capture-mode.png" width="744" height="1000" loading="lazy" alt="Étape 4 sur 4 de l'assistant Barrage, « Comment bloquer ? » : le mode Automatique est sélectionné, avec les préréglages Prudent, Équilibré et Rapide, et le résumé « 10 blocages maximum, 40 à 90 s entre deux, environ 14 min au total ».">
+          <figcaption><strong>Étape 4.</strong> Pas à pas ou automatique, avec trois préréglages et la durée estimée.</figcaption>
         </figure>
         <figure>
-          <img src="images/capture-reglages.png" width="637" height="1295" loading="lazy" alt="Panneau Barrage avec les réglages du mode automatique (délais, maximum par session) et la liste des comptes à cocher ou décocher.">
-          <figcaption><strong>Réglages et liste.</strong> Délais, maximum par session, et comptes à épargner décochés.</figcaption>
+          <img src="images/capture-suivi.png" width="744" height="762" loading="lazy" alt="Écran de suivi du mode automatique : progression « 1 sur 5 traités », compte à rebours avant le prochain blocage, « 1 sur 10 blocages cette session » et un bouton Arrêter le mode automatique.">
+          <figcaption><strong>Suivi.</strong> Compte à rebours aléatoire entre deux blocages ; le bouton Arrêter est toujours disponible.</figcaption>
         </figure>
       </div>
       <p class="hint">Captures réalisées avec des comptes d'exemple fictifs.</p>
