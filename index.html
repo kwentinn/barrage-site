@@ -184,15 +184,21 @@ pseudo3</pre>
   const VERSION = "0.3.0";
   document.getElementById("version").textContent = VERSION;
 
-  // Si le fichier d'installation n'est pas (encore) publié, on désactive le bouton plutôt que d'afficher une erreur 404.
+  // Le bouton n'est désactivé que si le serveur répond explicitement « introuvable » (404), jamais sur une simple erreur
+  // (réseau coupé, requête bloquée par une extension ou un proxy, délai dépassé) : le lien reste alors utilisable.
   const lien = document.getElementById("telecharger");
-  fetch(lien.getAttribute("href"), { method: "HEAD" })
-    .then((r) => { if (!r.ok) throw new Error("absent"); })
-    .catch(() => {
-      lien.setAttribute("aria-disabled", "true");
-      lien.removeAttribute("href");
-      document.getElementById("etat").textContent = "Le fichier d'installation n'est pas encore publié.";
-    });
+  function marquerAbsent() {
+    lien.setAttribute("aria-disabled", "true");
+    lien.removeAttribute("href");
+    document.getElementById("etat").textContent = "Le fichier d'installation n'est pas encore publié.";
+  }
+  async function verifierFichier() {
+    try {
+      const r = await fetch(lien.getAttribute("href"), { method: "HEAD", cache: "no-store" });
+      if (r.status === 404) marquerAbsent();
+    } catch (e) { /* on laisse le bouton actif */ }
+  }
+  verifierFichier();
 </script>
 </body>
 </html>
